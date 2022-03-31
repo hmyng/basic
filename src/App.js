@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import CityCard from "./components/CityCard";
+import Header from "./components/Header";
+import Input from "./components/Input";
+import Layout from "./components/layout/Layout";
+import ListContainer from "./components/ListContainer";
 
 function App() {
+  const displayedCity = [
+    {
+      name: "Ha noi",
+      timeZone: "+7",
+    },
+    {
+      name: "Ho Chi Minh",
+      timeZone: "+7",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Header />
+      <Input />
+
+      <ListContainer>
+        {displayedCity.map((city) => {
+          return <CityCard cityName={city.name} cityTimeZone={city.timeZone} />;
+        })}
+      </ListContainer>
+    </Layout>
   );
 }
 
