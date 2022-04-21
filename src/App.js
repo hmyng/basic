@@ -4,7 +4,7 @@ import Input from "./components/Input";
 import Layout from "./components/layout/Layout";
 import ListContainer from "./components/ListContainer";
 
-function App() {
+function App() { 
   const displayedCity = [
     {
       name: "Ha noi",
